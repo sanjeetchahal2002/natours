@@ -18,6 +18,8 @@ const dbUrl = process.env.DATABASE.replace(
 
 mongoose
   .connect(dbUrl, {
+    serverSelectionTimeoutMS: 5000, // Timeout for server selection
+    tlsAllowInvalidCertificates: true // Fix SSL issue
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false
