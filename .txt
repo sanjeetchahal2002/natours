@@ -1,0 +1,2 @@
+Command to connect db from commandLine
+mongosh "mongodb+srv://cluster0.52xwf.mongodb.net/" --apiVersion 1 --username sanjeetsinghchahal933
