@@ -7,6 +7,7 @@ const xss = require('xss-clean');
 const cookieParser = require('cookie-parser');
 const { rateLimit } = require('express-rate-limit');
 const hpp = require('hpp');
+const cors = require('cors');
 
 const tourRoute = require('./routes/tourRoutes');
 const userRoute = require('./routes/userRoutes');
@@ -24,7 +25,7 @@ const app = express();
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(cors());
 // app.use(helmet());
 
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
