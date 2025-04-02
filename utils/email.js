@@ -46,15 +46,15 @@ module.exports = class Email {
       html,
       text: convert(html)
     };
-    await this.newTransporter().sendMail(mailOptions);
+    this.newTransporter().sendMail(mailOptions);
   }
 
   async sendWelcome() {
-    await this.send('welcome', 'Welcome to the Natours Family!');
+    this.send('welcome', 'Welcome to the Natours Family!');
   }
 
   async sendPasswordReset() {
-    await this.send(
+    this.send(
       'passwordReset',
       'Your password reset token (valid for only 10 minutes)'
     );
